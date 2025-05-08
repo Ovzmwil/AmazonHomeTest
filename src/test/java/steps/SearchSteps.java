@@ -17,7 +17,7 @@ public class SearchSteps {
     
     @Before
     public void setUp() {
-    	driver = getDriver();
+    	driver = getDriver("chrome");
     	homePage = new HomePage(driver);
     }
 
