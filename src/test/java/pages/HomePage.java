@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,6 +42,13 @@ public class HomePage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(ConfigReader.getProperty("wait.timeout"))));
+	}
+	
+	public long getLoadingTime() {
+		long loadTime = (Long) ((JavascriptExecutor) driver)
+			    .executeScript("return window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;");
+		
+		return loadTime;
 	}
 	
 	public void goToHomePage() {

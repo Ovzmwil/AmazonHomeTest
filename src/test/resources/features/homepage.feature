@@ -27,3 +27,7 @@ Feature: Autocomplete search on Amazon
   	When I click on Novidades na Amazon on menu
   	Then I should be redirected to Amazon new releases
   	
+  Scenario: Page should load fast
+  	Given I am on the Amazon homepage
+  	Then loading time should be lass than 3000
+  	

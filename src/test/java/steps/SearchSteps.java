@@ -76,6 +76,11 @@ public class SearchSteps {
     	Assertions.assertTrue(homePage.urlContainsNewReleases());
     }
     
+    @Then("loading time should be lass than {long}")
+    public void loading_time_should_be_lass_than(long maximumLoadingTime) {
+    	Assertions.assertTrue(homePage.getLoadingTime() < maximumLoadingTime);
+    }
+    
     @After
     public void tearDown() {
     	quitDriver();
