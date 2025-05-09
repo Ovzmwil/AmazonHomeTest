@@ -1,6 +1,6 @@
 # 🧪 Automated Web Testing Project (Cucumber + Selenium)
 
-This project demonstrates automated UI testing using Java, Cucumber (BDD), and Selenium, following the Page Object Model design pattern, with Maven as the build tool.
+This project demonstrates automated UI testing using Java, Cucumber (BDD), and Selenium. It follows the Page Object Model design pattern and uses Maven as the build tool.
 
 ## 📂 Project Structure
 
@@ -11,6 +11,7 @@ src
 │       ├── pages
 │       ├── runners
 │       ├── steps
+|          └── hooks
 │       └── utils
 └── resources
     ├── features
@@ -34,7 +35,7 @@ cd AmazonHomeTest
 ```
 2. **Run tests using Maven:**
 ```bash
-mvn clean test
+mvn clean test -Dbrowser={browser}
 ```
 3. **View the test report:**
 
@@ -43,3 +44,4 @@ After execution, a file named `cucumber-reports.html` will be generated in the p
 ## 📝 Notes
 - The project uses Java 11, so it's necessary to have the JRE environment configured.
 - The project runs with Apache Maven, so it's necessary to have Apache Maven configured.
+
