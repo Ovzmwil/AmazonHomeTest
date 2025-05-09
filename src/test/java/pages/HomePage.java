@@ -48,6 +48,8 @@ public class HomePage {
 		long loadTime = (Long) ((JavascriptExecutor) driver)
 			    .executeScript("return window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;");
 		
+		System.out.println(loadTime);
+		
 		return loadTime;
 	}
 	

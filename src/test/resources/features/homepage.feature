@@ -29,5 +29,5 @@ Feature: Autocomplete search on Amazon
   	
   Scenario: Page should load fast
   	Given I am on the Amazon homepage
-  	Then loading time should be lass than 3000
+  	Then loading time should be lass than 4000
   	

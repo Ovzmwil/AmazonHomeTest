@@ -15,10 +15,9 @@ public class SearchSteps {
     WebDriver driver;
     HomePage homePage;
     
-    @Before
-    public void setUp() {
-    	driver = getDriver("chrome");
-    	homePage = new HomePage(driver);
+    public SearchSteps(TestContext context) {
+        this.driver = context.getDriver();
+        this.homePage = new HomePage(driver);
     }
 
     @Given("I am on the Amazon homepage")
@@ -79,10 +78,5 @@ public class SearchSteps {
     @Then("loading time should be lass than {long}")
     public void loading_time_should_be_lass_than(long maximumLoadingTime) {
     	Assertions.assertTrue(homePage.getLoadingTime() < maximumLoadingTime);
-    }
-    
-    @After
-    public void tearDown() {
-    	quitDriver();
     }
 }
