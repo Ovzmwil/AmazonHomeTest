@@ -18,7 +18,7 @@ Feature: Autocomplete search on Amazon
   Scenario: Show menu in mobile resolution
   	Given I am on the Amazon homepage
   	When I put browser in a mobile resolution
-  	Then I should be able to use burger menu
+  	Then I should be able to click on the menu items
   	
   Scenario: Click on item on mobile resolution
   	Given I am on the Amazon homepage

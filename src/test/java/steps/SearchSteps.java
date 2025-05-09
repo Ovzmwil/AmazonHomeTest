@@ -75,4 +75,9 @@ public class SearchSteps {
     public void loading_time_should_be_lass_than(long maximumLoadingTime) {
     	Assertions.assertTrue(homePage.getLoadingTime() < maximumLoadingTime);
     }
+    
+    @Then("I should be able to click on the menu items")
+    public void i_should_be_able_to_click_on_the_menu_items() {
+    	Assertions.assertTrue(homePage.navBarMenuIsClickable());
+    }
 }
