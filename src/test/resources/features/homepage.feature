@@ -20,3 +20,10 @@ Feature: Autocomplete search on Amazon
   	When I put browser in a mobile resolution
   	Then I should be able to use burger menu
   	
+  Scenario: Click on item on mobile resolution
+  	Given I am on the Amazon homepage
+  	When I put browser in a mobile resolution
+  	And I open burger menu
+  	When I click on Novidades na Amazon on menu
+  	Then I should be redirected to Amazon new releases
+  	

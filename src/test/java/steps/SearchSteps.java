@@ -61,6 +61,21 @@ public class SearchSteps {
     	Assertions.assertTrue(homePage.burgerMenuIsWorking());
     }
     
+    @When("I open burger menu")
+    public void i_open_burger_menu() {
+    	homePage.clickOnBurgerMenu();
+    }
+    
+    @When("I click on Novidades na Amazon on menu")
+    public void i_click_on_amazon_new_releases_on_menu() {
+    	homePage.clickOnNewReleasesBurgerMenu();
+    }
+    
+    @Then("I should be redirected to Amazon new releases")
+    public void i_should_be_redirected_to_amazon_new_releases() {
+    	Assertions.assertTrue(homePage.urlContainsNewReleases());
+    }
+    
     @After
     public void tearDown() {
     	quitDriver();

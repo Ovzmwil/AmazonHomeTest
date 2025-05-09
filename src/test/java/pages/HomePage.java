@@ -34,6 +34,9 @@ public class HomePage {
 	@FindBy(id = "hmenu-content")
 	WebElement openedBurgerMenu;
 	
+	@FindBy(xpath = "//a[@class='hmenu-item' and text()='Novidades na Amazon']")
+	WebElement newReleases;
+	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -72,12 +75,25 @@ public class HomePage {
 		return menuItems.size();
 	}
 	
-	public boolean burgerMenuIsWorking() {
+	public void clickOnBurgerMenu() {
 		wait.until(ExpectedConditions.visibilityOf(burgerMenu));
 		burgerMenu.click();
+	}
+	
+	public boolean burgerMenuIsWorking() {
+		clickOnBurgerMenu();
 		WebElement element = wait.until(ExpectedConditions.visibilityOf(openedBurgerMenu));
 		
 		return element != null;
+	}
+	
+	public void clickOnNewReleasesBurgerMenu() {
+		wait.until(ExpectedConditions.elementToBeClickable(newReleases));
+		newReleases.click();
+	}
+	
+	public boolean urlContainsNewReleases() {
+		return driver.getCurrentUrl().contains("new-releases");
 	}
 	
 	
