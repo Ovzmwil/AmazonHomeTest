@@ -11,9 +11,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DriverFactory {
     private static WebDriver driver;
 
-    public static WebDriver getDriver(String browser) {
+    public static WebDriver getDriver() {
+    	String browser = System.getProperty("browser", "chrome").toLowerCase();
+    	
         if (driver == null) {
-            switch (browser.toLowerCase()) {
+            switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();

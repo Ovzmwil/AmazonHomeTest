@@ -1,14 +1,10 @@
 package steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pages.HomePage;
 
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
-
-import static utils.DriverFactory.*;
 
 public class SearchSteps {
 

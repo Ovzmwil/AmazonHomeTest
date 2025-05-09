@@ -27,7 +27,7 @@ public class Hooks {
 	
 	@Before
     public void setUp() {
-		WebDriver driver = getDriver("chrome");
+		WebDriver driver = getDriver();
         context.setDriver(driver);
     }
 
